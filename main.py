@@ -26,9 +26,9 @@ def ssh_exec_cmd():
     stdin, stdout, stderr = ssh.exec_command("ps -ef | grep kafka | grep -v grep | awk '{print $2}' | xargs kill -9")
     #不管环境上是否存在zookeeper进程，都kill -9 zookeeper进程
     stdin, stdout, stderr = ssh.exec_command("ps -ef | grep zookeeper | grep -v grep | awk '{print $2}' | xargs kill -9")
-    # 不管环境上是否存在redis进程，都kill -9 redis进程
+    #不管环境上是否存在redis进程，都kill -9 redis进程
     stdin, stdout, stderr = ssh.exec_command("ps -ef | grep redis | grep -v grep | awk '{print $2}' | xargs kill -9")
-    # 不管环境上是否存在nginx进程，都kill -9 nginx进程
+    #不管环境上是否存在nginx进程，都kill -9 nginx进程
     stdin, stdout, stderr = ssh.exec_command("ps -ef | grep nginx | grep -v grep | awk '{print $2}' | xargs kill -9")
     """
     解压zookeeper安装包，并启动zookeeper服务
